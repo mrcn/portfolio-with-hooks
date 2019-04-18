@@ -1,3 +1,12 @@
+## To-do
+1. fix `Line 54:  'Homepage' is not defined  no-undef`
+2. add registration
+3. add redirections
+4. stateful navigation
+4. add log-out
+5. add log-in
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
