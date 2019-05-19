@@ -4,7 +4,7 @@ import { Button } from "antd"
 
 const styles = theme => ({})
 
-function Hompage(props) {
+function Homepage(props) {
     const { classes } = props
 
     return (
