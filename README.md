@@ -1,5 +1,5 @@
 ## To-do
-1. fix `Line 54:  'Homepage' is not defined  no-undef`
+1. fix errors
 2. add registration
 3. add redirections
 4. stateful navigation
