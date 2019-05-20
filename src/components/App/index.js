@@ -8,6 +8,7 @@ import Dashboard from '../Dashboard'
 // import { CssBaseline, CircularProgress } from '@material-ui/core'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 // import firebase from '../firebase'
+import 'antd/dist/antd.css';
 
 export default function App() {
     return (

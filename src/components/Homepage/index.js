@@ -1,84 +1,104 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {Button, Layout, Menu, Breadcrumb} from 'antd'
+import {Button, Layout, Menu, Breadcrumb, Icon} from 'antd'
+
+
+
 
 const {Header, Sider, Content, Footer} = Layout;
+const { SubMenu } = Menu;
 
 function Homepage(props) {
     const {classes} = props
 
     return (
-        <Layout className="layout">
-        <Header>
-            <div className="logo"/>
-            <Menu
-                theme="dark"
-                mode="horizontal"
-                defaultSelectedKeys={['2']}
-                style={{
-                lineHeight: '64px'
-            }}>
-                <Menu.Item key="1">nav 1</Menu.Item>
-                <Menu.Item key="2">nav 2</Menu.Item>
-                <Menu.Item key="3">nav 3</Menu.Item>
-            </Menu>
+
+        <Layout>
+        <Header className="header">
+          <div className="logo" />
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            defaultSelectedKeys={['2']}
+            style={{ lineHeight: '64px' }}
+          >
+            <Menu.Item key="1">nav 1</Menu.Item>
+            <Menu.Item key="2">nav 2</Menu.Item>
+            <Menu.Item key="3">nav 3</Menu.Item>
+          </Menu>
         </Header>
-        <Content style={{
-            padding: '0 50px'
-        }}>
-            <Breadcrumb style={{
-                margin: '16px 0'
-            }}>
-                <Breadcrumb.Item>Home</Breadcrumb.Item>
-                <Breadcrumb.Item>List</Breadcrumb.Item>
-                <Breadcrumb.Item>App</Breadcrumb.Item>
+        <Layout>
+          <Sider width={200} style={{ background: '#fff' }}>
+            <Menu
+              mode="inline"
+              defaultSelectedKeys={['1']}
+              defaultOpenKeys={['sub1']}
+              style={{ height: '100%', borderRight: 0 }}
+            >
+              <SubMenu
+                key="sub1"
+                title={
+                  <span>
+                    <Icon type="user" />
+                    subnav 1
+                  </span>
+                }
+              >
+                <Menu.Item key="1">option1</Menu.Item>
+                <Menu.Item key="2">option2</Menu.Item>
+                <Menu.Item key="3">option3</Menu.Item>
+                <Menu.Item key="4">option4</Menu.Item>
+              </SubMenu>
+              <SubMenu
+                key="sub2"
+                title={
+                  <span>
+                    <Icon type="laptop" />
+                    subnav 2
+                  </span>
+                }
+              >
+                <Menu.Item key="5">option5</Menu.Item>
+                <Menu.Item key="6">option6</Menu.Item>
+                <Menu.Item key="7">option7</Menu.Item>
+                <Menu.Item key="8">option8</Menu.Item>
+              </SubMenu>
+              <SubMenu
+                key="sub3"
+                title={
+                  <span>
+                    <Icon type="notification" />
+                    subnav 3
+                  </span>
+                }
+              >
+                <Menu.Item key="9">option9</Menu.Item>
+                <Menu.Item key="10">option10</Menu.Item>
+                <Menu.Item key="11">option11</Menu.Item>
+                <Menu.Item key="12">option12</Menu.Item>
+              </SubMenu>
+            </Menu>
+          </Sider>
+          <Layout style={{ padding: '0 24px 24px' }}>
+            <Breadcrumb style={{ margin: '16px 0' }}>
+              <Breadcrumb.Item>Home</Breadcrumb.Item>
+              <Breadcrumb.Item>List</Breadcrumb.Item>
+              <Breadcrumb.Item>App</Breadcrumb.Item>
             </Breadcrumb>
-            <div
-                style={{
+            <Content
+              style={{
                 background: '#fff',
                 padding: 24,
-                minHeight: 280
-            }}>
-                <h2>
-                    Hello Guest
-                </h2>
-                <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="secondary"
-                    component={Link}
-                    to="/register"
-                    className={classes.submit}>
-                    Register
-                </Button>
-                <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="secondary"
-                    component={Link}
-                    to="/login"
-                    className={classes.submit}>
-                    Login
-                </Button>
-                <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="secondary"
-                    component={Link}
-                    to="/dashboard"
-                    className={classes.submit}>
-                    Dashboard
-                </Button>
-            </div>
-        </Content>
-        <Footer style={{
-            textAlign: 'center'
-        }}>Ant Design ©2018 Created by Ant UED</Footer>
-    </Layout>,
-    mountNode
+                margin: 0,
+                minHeight: 280,
+              }}
+            >
+              Content
+            </Content>
+          </Layout>
+        </Layout>
+      </Layout>
     );
+}
 
-// export default Homepage
+export default (Homepage)
